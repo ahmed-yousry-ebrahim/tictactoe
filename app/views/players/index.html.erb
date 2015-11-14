@@ -1,14 +1,13 @@
-<h1>Listing players</h1>
+<div class="row text-center leader-board">
+<h1><%=t("players.leaderboard")%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Wins count</th>
-      <th>Loses count</th>
-      <th>Draws count</th>
-      <th>Game</th>
-      <th colspan="3"></th>
+      <th><%=t("players.name")%></th>
+      <th><%=t("players.wins_count")%></th>
+      <th><%=t("players.draws_count")%></th>
+      <th><%=t("players.losses_count")%></th>
     </tr>
   </thead>
 
@@ -17,17 +16,11 @@
       <tr>
         <td><%= player.name %></td>
         <td><%= player.wins_count %></td>
-        <td><%= player.loses_count %></td>
         <td><%= player.draws_count %></td>
-        <td><%= player.game_id %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= player.loses_count %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New Player', new_player_path %>

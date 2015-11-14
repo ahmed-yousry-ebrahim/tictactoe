@@ -13,3 +13,9 @@ en:
     player_win: "%{player_name} Wins"
     new_round: "New Round"
     leader_board: Leader board
+  players:
+    leaderboard: "Leader Board"
+    name: "Player name"
+    wins_count: "Wins"
+    draws_count: "Draw"
+    losses_count: "Losses"

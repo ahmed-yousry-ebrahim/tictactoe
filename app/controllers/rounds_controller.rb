@@ -3,10 +3,13 @@ class RoundsController < ApplicationController
   before_action :set_round, only: [:show, :calculate_result]
 
   def new
-    @round = Round.new
-    @round.game = @game
-    @round.current_player = @game.first_player
-    @round.save
+    game_current_round = @game.current_round
+    if game_current_round.nil? || (!game_current_round.nil? && !game_current_round.result.nil?)
+      @round = Round.new
+      @round.game = @game
+      @round.current_player = @game.first_player
+      @round.save
+    end
     redirect_to @game
   end
 
