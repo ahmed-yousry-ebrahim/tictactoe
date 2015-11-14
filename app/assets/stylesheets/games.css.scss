@@ -1,0 +1,32 @@
+.game-board{
+  margin-top: 100px !important;
+  font-size: 25px;
+  .result{
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .cell,.inactive-cell{
+    border: 1px solid #000;
+    width:100px;
+    height:100px;
+    background-color: #EFEFEF;
+    font-size: 30px;
+    font-weight: bold;
+    &:hover{
+      background-color: #666666;
+    }
+  }
+  .player-symbol{
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .player-symbol-active{
+    margin-top: 20px;
+    font-size: 60px;
+    color: crimson;
+  }
+}
+.hidden{
+  display:none;
+}

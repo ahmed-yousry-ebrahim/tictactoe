@@ -1,0 +1,51 @@
+<div class="row game-board">
+  <%=hidden_field_tag "current_player_symbol", @current_player_symbol%>
+<div class="small-4 columns text-center">
+  <%=t "games.player1"%> <br/><br/>
+  <%=@game.first_player.name%>
+  <div id="symbol-X" class="player-symbol">X</div>
+</div>
+<div class="small-4 columns text-center">
+  <div class="round">
+    <%=t("games.round") + @game.rounds_count.to_s%>
+  </div>
+  <div id="result" class="result">
+
+  </div>
+  <%=form_tag(calculate_result_game_round_path(:game_id => @game.id, :id => @game.current_round.id),:method => "post", :id=> "game-grid", :remote => true) do%>
+  <table>
+    <% 3.times do |row_index| %>
+        <tr>
+          <% 3.times do |column_index| %>
+            <td class="cell" data-row="<%=row_index%>" data-column="<%=column_index%>">
+
+            </td>
+            <%=hidden_field_tag "cell_#{row_index}_#{column_index}"%>
+          <%end%>
+        </tr>
+    <%end%>
+  </table>
+      <%end%>
+</div>
+<div class="small-4 columns text-center">
+  <%=t "games.player2"%> <br/><br/>
+  <%=@game.second_player.name%>
+  <div id="symbol-O" class="player-symbol">O</div>
+</div>
+</div>
+
+<div class="row">
+  <%=link_to new_game_round_path(:game_id => @game.id) do %>
+    <div class="action-button button alert right hidden">
+        <i class="fa fa-refresh"></i>
+        <%=t("games.new_round")%>
+    </div>
+  <%end%>
+
+  <%=link_to players_path do %>
+      <div class="action-button button notice left hidden">
+        <i class="fa fa-users"></i>
+        <%=t("games.leader_board")%>
+      </div>
+  <%end%>
+</div>

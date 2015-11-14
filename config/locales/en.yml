@@ -1,0 +1,15 @@
+en:
+  app_name: "TicTacToe"
+  games:
+    new: "New Game"
+    fp_name: "First player name"
+    sp_name: "Second player name"
+    create: "Create game"
+    player1: "Player One"
+    player2: "Player Two"
+    round: "Round"
+    successfully_created: "Game was successfully created."
+    draw: "The game ended in a draw"
+    player_win: "%{player_name} Wins"
+    new_round: "New Round"
+    leader_board: Leader board

@@ -1,0 +1,13 @@
+<div class="small-4 columns small-offset-4 game-board">
+  <table>
+    <% 3.times do |row_index| %>
+        <tr>
+          <% 3.times do |column_index| %>
+              <td class="cell" data-row="<%=row_index%>" data-column="<%=column_index%>">
+
+              </td>
+          <%end%>
+        </tr>
+    <%end%>
+  </table>
+</div>

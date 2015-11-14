@@ -1,0 +1,15 @@
+$("#current_player_symbol").val("<%=@current_player_symbol%>");
+$(".player-symbol-active").each(function(){
+    $(this).removeClass("player-symbol-active").addClass("player-symbol");
+})
+$("#symbol-<%=@current_player_symbol%>").removeClass("player-symbol").addClass("player-symbol-active");
+<% unless @result.blank? %>
+$(".cell").each(function(){
+    $(this).removeClass("cell").addClass("inactive-cell");
+});
+$("#result").html("<%=@result%>");
+
+$(".action-button").each(function(){
+    $(this).removeClass("hidden");
+});
+<%end%>
