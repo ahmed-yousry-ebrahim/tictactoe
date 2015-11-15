@@ -72,6 +72,7 @@ feature "As a player I should be able to win the game putting my symbol in a row
     fill_in I18n.t("games.fp_name"), with: first_player.name
     fill_in I18n.t("games.sp_name"), with: second_player.name
     click_button I18n.t("games.create")
+    #simulate players clicks on the board
     find("td[data-row='0'][data-column='0']").click
     find("td[data-row='1'][data-column='1']").click
     find("td[data-row='1'][data-column='0']").click

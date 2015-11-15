@@ -17,8 +17,8 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  # config.include FactoryGirl::Syntax::Methods
 
+  #adatabase cleaner configurations
   config.before(:suite) do
     begin
       DatabaseCleaner.start
