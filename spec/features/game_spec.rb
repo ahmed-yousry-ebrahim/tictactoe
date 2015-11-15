@@ -95,4 +95,23 @@ feature "As a player I should be able to win the game putting my symbol in a row
     find("td[data-row='1'][data-column='2']").click
     expect(page).to have_content I18n.t("games.player_win",:player_name=>second_player.name)
   end
+
+  scenario "no more cells are left so game is a draw", :js=>true do
+    first_player = FactoryGirl.build(:player)
+    second_player = FactoryGirl.build(:player)
+    visit new_game_path
+    fill_in I18n.t("games.fp_name"), with: first_player.name
+    fill_in I18n.t("games.sp_name"), with: second_player.name
+    click_button I18n.t("games.create")
+    find("td[data-row='0'][data-column='0']").click
+    find("td[data-row='1'][data-column='1']").click
+    find("td[data-row='0'][data-column='1']").click
+    find("td[data-row='0'][data-column='2']").click
+    find("td[data-row='2'][data-column='0']").click
+    find("td[data-row='1'][data-column='0']").click
+    find("td[data-row='1'][data-column='2']").click
+    find("td[data-row='2'][data-column='1']").click
+    find("td[data-row='2'][data-column='2']").click
+    expect(page).to have_content I18n.t("games.draw")
+  end
 end
