@@ -1,6 +1,7 @@
 # tictactoe
 
 **The problem**
+
 You are required to implement a fully-functioning version of TicTacToe
 
 - It is a 2-player game (no computer opponent, playing in the same browser window)
